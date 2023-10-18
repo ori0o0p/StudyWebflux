@@ -1,4 +1,4 @@
-package com.example.springwebfluxstudy.controller.dto.request;
+package com.example.springwebfluxstudy.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
