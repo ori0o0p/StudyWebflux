@@ -1,6 +1,6 @@
-package com.example.springwebfluxstudy.router;
+package com.example.springwebfluxstudy.board.router;
 
-import com.example.springwebfluxstudy.handler.BoardHandler;
+import com.example.springwebfluxstudy.board.handler.BoardHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
@@ -25,6 +25,5 @@ public class BoardRouter {
                         .GET("/list", request -> boardHandler.boardList())
         ).build();
     }
-
 
 }

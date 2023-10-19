@@ -1,10 +1,9 @@
-package com.example.springwebfluxstudy.handler;
+package com.example.springwebfluxstudy.board.handler;
 
-import com.example.springwebfluxstudy.dto.request.BoardRequest;
-import com.example.springwebfluxstudy.dto.response.BoardListResponse;
-import com.example.springwebfluxstudy.dto.response.BoardResponse;
-import com.example.springwebfluxstudy.service.BoardCreateService;
-import com.example.springwebfluxstudy.service.BoardFindAllService;
+import com.example.springwebfluxstudy.board.dto.request.BoardRequest;
+import com.example.springwebfluxstudy.board.dto.response.BoardResponse;
+import com.example.springwebfluxstudy.board.service.BoardCreateService;
+import com.example.springwebfluxstudy.board.service.BoardFindAllService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -13,11 +12,11 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
-import java.util.Map;
 
 @Component
 @RequiredArgsConstructor
 public class BoardHandler {
+
     private final BoardCreateService boardCreateService;
     private final BoardFindAllService boardFindAllService;
 
@@ -31,13 +30,10 @@ public class BoardHandler {
     }
 
     public Mono<ServerResponse> boardList() {
-        //Mono<BoardListResponse> boardListResponseMono = boardFindAllService.execute();
         Flux<BoardResponse> boardResponseFlux = boardFindAllService.execute();
 
         return ServerResponse.ok()
-                .body(boardResponseFlux, Flux.class); // ??
-        //return ServerResponse.ok()
-        //        .body(boardListResponseMono, BoardListResponse.class);
+                .body(boardResponseFlux, Flux.class);
     }
 
 }

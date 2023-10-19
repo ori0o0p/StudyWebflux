@@ -1,8 +1,8 @@
-package com.example.springwebfluxstudy.service;
+package com.example.springwebfluxstudy.board.service;
 
-import com.example.springwebfluxstudy.dto.request.BoardRequest;
-import com.example.springwebfluxstudy.entity.Board;
-import com.example.springwebfluxstudy.repository.BoardRepository;
+import com.example.springwebfluxstudy.board.dto.request.BoardRequest;
+import com.example.springwebfluxstudy.board.repository.BoardRepository;
+import com.example.springwebfluxstudy.board.entity.Board;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

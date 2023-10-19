@@ -1,4 +1,4 @@
-package com.example.springwebfluxstudy.entity;
+package com.example.springwebfluxstudy.board.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

@@ -1,4 +1,4 @@
-package com.example.springwebfluxstudy.dto.response;
+package com.example.springwebfluxstudy.board.dto.response;
 
 
 import lombok.AllArgsConstructor;
