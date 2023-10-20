@@ -22,7 +22,8 @@ public class BoardRouter {
         return route().path("/board", builder ->
                 builder.nest(accept(MediaType.APPLICATION_JSON), routes -> routes
                         .POST("", boardHandler::createBoard))
-                        .GET("/list", request -> boardHandler.boardList())
+                        .nest(accept(MediaType.TEXT_EVENT_STREAM), sseRoutes -> sseRoutes
+                                .GET("/list", request -> boardHandler.boardList()))
         ).build();
     }
 
